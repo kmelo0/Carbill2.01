@@ -1,25 +1,51 @@
 ﻿Public Class Form1
-    Private Sub FILEToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    Imports System.IO
+
+
+    Dim CustID As Integer = Val(TextBox_CustID)
+    Dim CustTitle = TextBox_NameTitle
+    Dim CustName = TextBox_Name
+    Dim CustAddress = TextBox_Address
+    Dim CustTown = TextBox_Town
+    Dim CustPhone As Integer = Val(TextBox_LandlineNum)
+    Dim CustMobile As Integer = Val(TextBox_MobileNum)
+    Dim CustEmail = TextBox_CustEmail
+
+    Dim CarLicense = TextBox_CarLicense
+    Dim CarMake = TextBox_CarMake
+    Dim CarModel = TextBox_CarModel
+    Dim CarYear As Integer = Val(TextBox_CarYear)
+    Dim CarEngine = TextBox_CarEngine
+    Dim CarMileage = TextBox_CarMileage
+
+    Dim CostOfRepair As Integer = Val(TextBox_CostOfRepair)
+    Dim HoursTaken As Integer = Val(TextBox_HoursTaken)
+    Dim VATPercent As Integer = Val(TextBox_VatType)
+
+    Dim OpenCustData As S
+    Public Sub Main()
+
+
 
     End Sub
 
-    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox_Name.TextChanged
+    Public Sub NewCustEntry()
 
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox_NameTitle.TextChanged
+    Private Sub LoadCustData()
 
     End Sub
 
-    Private Sub Label17_Click(sender As Object, e As EventArgs) Handles Label_BillCalc_TOR4.Click
+
+    Private Sub SaveCustData()
 
     End Sub
 
-    Private Sub ToolStripDropDownButton1_Click(sender As Object, e As EventArgs) Handles ToolStripDropDownButton1.Click
+
+    Private Sub BillCalculate()
 
     End Sub
 
-    Private Sub CustomerDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CustomerDataToolStripMenuItem.Click
 
-    End Sub
 End Class

@@ -26,7 +26,10 @@ Partial Class Form1
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.LoadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CustomerDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CustomerByIDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NewEntryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripDropDownButton2 = New System.Windows.Forms.ToolStripDropDownButton()
@@ -51,11 +54,11 @@ Partial Class Form1
         Me.Label_BillCalc_TOR2 = New System.Windows.Forms.Label()
         Me.Label_BillCalc_TOR1 = New System.Windows.Forms.Label()
         Me.Label_BillCalc_TOR3 = New System.Windows.Forms.Label()
-        Me.TextBox21 = New System.Windows.Forms.TextBox()
-        Me.TextBox20 = New System.Windows.Forms.TextBox()
-        Me.TextBox19 = New System.Windows.Forms.TextBox()
-        Me.TextBox18 = New System.Windows.Forms.TextBox()
-        Me.TextBox17 = New System.Windows.Forms.TextBox()
+        Me.TextBox_AfterVAT = New System.Windows.Forms.TextBox()
+        Me.TextBox_BeforeVAT = New System.Windows.Forms.TextBox()
+        Me.TextBox_HoursTaken = New System.Windows.Forms.TextBox()
+        Me.TextBox_CostOfRepair = New System.Windows.Forms.TextBox()
+        Me.TextBox_VatType = New System.Windows.Forms.TextBox()
         Me.Label_CarCalc_AfterVAT = New System.Windows.Forms.Label()
         Me.Label_CarCalc_BeforeVAT = New System.Windows.Forms.Label()
         Me.Label_CarCalc_VATType = New System.Windows.Forms.Label()
@@ -100,9 +103,6 @@ Partial Class Form1
         Me.Label_NameTitle = New System.Windows.Forms.Label()
         Me.Label_Name = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.CustomerDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CustomerByIDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NewEntryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         Me.TabPage3.SuspendLayout()
@@ -136,25 +136,43 @@ Partial Class Form1
         '
         Me.LoadToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CustomerDataToolStripMenuItem, Me.CustomerByIDToolStripMenuItem})
         Me.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem"
-        Me.LoadToolStripMenuItem.Size = New System.Drawing.Size(211, 30)
+        Me.LoadToolStripMenuItem.Size = New System.Drawing.Size(177, 30)
         Me.LoadToolStripMenuItem.Text = "Load"
+        '
+        'CustomerDataToolStripMenuItem
+        '
+        Me.CustomerDataToolStripMenuItem.Name = "CustomerDataToolStripMenuItem"
+        Me.CustomerDataToolStripMenuItem.Size = New System.Drawing.Size(248, 30)
+        Me.CustomerDataToolStripMenuItem.Text = "Customer by name"
+        '
+        'CustomerByIDToolStripMenuItem
+        '
+        Me.CustomerByIDToolStripMenuItem.Name = "CustomerByIDToolStripMenuItem"
+        Me.CustomerByIDToolStripMenuItem.Size = New System.Drawing.Size(248, 30)
+        Me.CustomerByIDToolStripMenuItem.Text = "Customer by ID"
         '
         'SaveToolStripMenuItem
         '
         Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
-        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(211, 30)
+        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(177, 30)
         Me.SaveToolStripMenuItem.Text = "Save"
+        '
+        'NewEntryToolStripMenuItem
+        '
+        Me.NewEntryToolStripMenuItem.Name = "NewEntryToolStripMenuItem"
+        Me.NewEntryToolStripMenuItem.Size = New System.Drawing.Size(177, 30)
+        Me.NewEntryToolStripMenuItem.Text = "New entry"
         '
         'DeleteToolStripMenuItem
         '
         Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
-        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(211, 30)
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(177, 30)
         Me.DeleteToolStripMenuItem.Text = "Delete"
         '
         'HelpToolStripMenuItem
         '
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(211, 30)
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(177, 30)
         Me.HelpToolStripMenuItem.Text = "Help"
         '
         'ToolStripDropDownButton2
@@ -223,11 +241,11 @@ Partial Class Form1
         Me.TabPage4.Controls.Add(Me.Label_BillCalc_TOR2)
         Me.TabPage4.Controls.Add(Me.Label_BillCalc_TOR1)
         Me.TabPage4.Controls.Add(Me.Label_BillCalc_TOR3)
-        Me.TabPage4.Controls.Add(Me.TextBox21)
-        Me.TabPage4.Controls.Add(Me.TextBox20)
-        Me.TabPage4.Controls.Add(Me.TextBox19)
-        Me.TabPage4.Controls.Add(Me.TextBox18)
-        Me.TabPage4.Controls.Add(Me.TextBox17)
+        Me.TabPage4.Controls.Add(Me.TextBox_AfterVAT)
+        Me.TabPage4.Controls.Add(Me.TextBox_BeforeVAT)
+        Me.TabPage4.Controls.Add(Me.TextBox_HoursTaken)
+        Me.TabPage4.Controls.Add(Me.TextBox_CostOfRepair)
+        Me.TabPage4.Controls.Add(Me.TextBox_VatType)
         Me.TabPage4.Controls.Add(Me.Label_CarCalc_AfterVAT)
         Me.TabPage4.Controls.Add(Me.Label_CarCalc_BeforeVAT)
         Me.TabPage4.Controls.Add(Me.Label_CarCalc_VATType)
@@ -235,7 +253,7 @@ Partial Class Form1
         Me.TabPage4.Controls.Add(Me.Label_CarCalc_Cost)
         Me.TabPage4.Location = New System.Drawing.Point(4, 32)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage4.Size = New System.Drawing.Size(1250, 775)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Bill calculator"
@@ -378,45 +396,45 @@ Partial Class Form1
         Me.Label_BillCalc_TOR3.TabIndex = 13
         Me.Label_BillCalc_TOR3.Text = "3"
         '
-        'TextBox21
+        'TextBox_AfterVAT
         '
-        Me.TextBox21.Location = New System.Drawing.Point(236, 255)
-        Me.TextBox21.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TextBox21.Name = "TextBox21"
-        Me.TextBox21.Size = New System.Drawing.Size(148, 26)
-        Me.TextBox21.TabIndex = 11
+        Me.TextBox_AfterVAT.Location = New System.Drawing.Point(236, 255)
+        Me.TextBox_AfterVAT.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox_AfterVAT.Name = "TextBox_AfterVAT"
+        Me.TextBox_AfterVAT.Size = New System.Drawing.Size(148, 26)
+        Me.TextBox_AfterVAT.TabIndex = 11
         '
-        'TextBox20
+        'TextBox_BeforeVAT
         '
-        Me.TextBox20.Location = New System.Drawing.Point(236, 215)
-        Me.TextBox20.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TextBox20.Name = "TextBox20"
-        Me.TextBox20.Size = New System.Drawing.Size(148, 26)
-        Me.TextBox20.TabIndex = 10
+        Me.TextBox_BeforeVAT.Location = New System.Drawing.Point(236, 215)
+        Me.TextBox_BeforeVAT.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox_BeforeVAT.Name = "TextBox_BeforeVAT"
+        Me.TextBox_BeforeVAT.Size = New System.Drawing.Size(148, 26)
+        Me.TextBox_BeforeVAT.TabIndex = 10
         '
-        'TextBox19
+        'TextBox_HoursTaken
         '
-        Me.TextBox19.Location = New System.Drawing.Point(236, 137)
-        Me.TextBox19.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TextBox19.Name = "TextBox19"
-        Me.TextBox19.Size = New System.Drawing.Size(148, 26)
-        Me.TextBox19.TabIndex = 9
+        Me.TextBox_HoursTaken.Location = New System.Drawing.Point(236, 137)
+        Me.TextBox_HoursTaken.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox_HoursTaken.Name = "TextBox_HoursTaken"
+        Me.TextBox_HoursTaken.Size = New System.Drawing.Size(148, 26)
+        Me.TextBox_HoursTaken.TabIndex = 9
         '
-        'TextBox18
+        'TextBox_CostOfRepair
         '
-        Me.TextBox18.Location = New System.Drawing.Point(236, 100)
-        Me.TextBox18.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TextBox18.Name = "TextBox18"
-        Me.TextBox18.Size = New System.Drawing.Size(148, 26)
-        Me.TextBox18.TabIndex = 8
+        Me.TextBox_CostOfRepair.Location = New System.Drawing.Point(236, 100)
+        Me.TextBox_CostOfRepair.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox_CostOfRepair.Name = "TextBox_CostOfRepair"
+        Me.TextBox_CostOfRepair.Size = New System.Drawing.Size(148, 26)
+        Me.TextBox_CostOfRepair.TabIndex = 8
         '
-        'TextBox17
+        'TextBox_VatType
         '
-        Me.TextBox17.Location = New System.Drawing.Point(236, 173)
-        Me.TextBox17.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TextBox17.Name = "TextBox17"
-        Me.TextBox17.Size = New System.Drawing.Size(148, 26)
-        Me.TextBox17.TabIndex = 8
+        Me.TextBox_VatType.Location = New System.Drawing.Point(236, 173)
+        Me.TextBox_VatType.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox_VatType.Name = "TextBox_VatType"
+        Me.TextBox_VatType.Size = New System.Drawing.Size(148, 26)
+        Me.TextBox_VatType.TabIndex = 8
         '
         'Label_CarCalc_AfterVAT
         '
@@ -478,7 +496,7 @@ Partial Class Form1
         Me.TabPage3.Controls.Add(Me.DataGridView1)
         Me.TabPage3.Location = New System.Drawing.Point(4, 32)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage3.Size = New System.Drawing.Size(1250, 775)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Bill history"
@@ -554,7 +572,7 @@ Partial Class Form1
         Me.TabPage1.Controls.Add(Me.Label_Name)
         Me.TabPage1.Location = New System.Drawing.Point(4, 32)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(1250, 775)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Customer/car info"
@@ -856,24 +874,6 @@ Partial Class Form1
         Me.TabControl1.Size = New System.Drawing.Size(1258, 811)
         Me.TabControl1.TabIndex = 1
         '
-        'CustomerDataToolStripMenuItem
-        '
-        Me.CustomerDataToolStripMenuItem.Name = "CustomerDataToolStripMenuItem"
-        Me.CustomerDataToolStripMenuItem.Size = New System.Drawing.Size(248, 30)
-        Me.CustomerDataToolStripMenuItem.Text = "Customer by name"
-        '
-        'CustomerByIDToolStripMenuItem
-        '
-        Me.CustomerByIDToolStripMenuItem.Name = "CustomerByIDToolStripMenuItem"
-        Me.CustomerByIDToolStripMenuItem.Size = New System.Drawing.Size(248, 30)
-        Me.CustomerByIDToolStripMenuItem.Text = "Customer by ID"
-        '
-        'NewEntryToolStripMenuItem
-        '
-        Me.NewEntryToolStripMenuItem.Name = "NewEntryToolStripMenuItem"
-        Me.NewEntryToolStripMenuItem.Size = New System.Drawing.Size(211, 30)
-        Me.NewEntryToolStripMenuItem.Text = "New entry"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -916,11 +916,11 @@ Partial Class Form1
     Friend WithEvents Label_BillCalc_TOR2 As Label
     Friend WithEvents Label_BillCalc_TOR1 As Label
     Friend WithEvents Label_BillCalc_TOR3 As Label
-    Friend WithEvents TextBox21 As TextBox
-    Friend WithEvents TextBox20 As TextBox
-    Friend WithEvents TextBox19 As TextBox
-    Friend WithEvents TextBox18 As TextBox
-    Friend WithEvents TextBox17 As TextBox
+    Friend WithEvents TextBox_AfterVAT As TextBox
+    Friend WithEvents TextBox_BeforeVAT As TextBox
+    Friend WithEvents TextBox_HoursTaken As TextBox
+    Friend WithEvents TextBox_CostOfRepair As TextBox
+    Friend WithEvents TextBox_VatType As TextBox
     Friend WithEvents Label_CarCalc_AfterVAT As Label
     Friend WithEvents Label_CarCalc_BeforeVAT As Label
     Friend WithEvents Label_CarCalc_VATType As Label
