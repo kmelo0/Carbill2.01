@@ -14,4 +14,12 @@
     Private Sub Label17_Click(sender As Object, e As EventArgs) Handles Label_BillCalc_TOR4.Click
 
     End Sub
+
+    Private Sub ToolStripDropDownButton1_Click(sender As Object, e As EventArgs) Handles ToolStripDropDownButton1.Click
+
+    End Sub
+
+    Private Sub CustomerDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CustomerDataToolStripMenuItem.Click
+
+    End Sub
 End Class
